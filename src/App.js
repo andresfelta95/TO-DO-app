@@ -14,7 +14,7 @@ const todos = [
   },
   {
     text: "SA02 CMPE2150",
-    completed: false,
+    completed: true,
   },
   {
     text: "Proj01 CMPE2150",
@@ -36,7 +36,11 @@ function App() {
       <br></br>
       <TodoList>
         {todos.map((todo) => (
-          <TodoItem key={todo.text} text={todo.text} />
+          <TodoItem 
+            key={todo.text} 
+            text={todo.text}
+            completed={todo.completed}
+          />
         ))}
       </TodoList>
       <br></br>
@@ -57,7 +61,7 @@ const CSSReset = createGlobalStyle`
     font: inherit;
     vertical-align: baseline;
     text-align: center;
-    background: palevioletred;
+    background: powderblue;
   }
 `;
 

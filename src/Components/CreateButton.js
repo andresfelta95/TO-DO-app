@@ -2,9 +2,18 @@ import React from "react";
 import styled from "styled-components";
 
 function CreateButton() {
+  // Function to create a new todo
+  const onClickButton = (text) => {
+    console.log("Create a new todo with", text);
+  };
+
   return (
     <React.Fragment>
-      <Button>✖️</Button>
+      <Button
+        onClick={() => onClickButton("New TODO")}
+      >
+        ➕
+      </Button>
     </React.Fragment>
   );
 }
@@ -14,14 +23,25 @@ function CreateButton() {
 
 const Button = styled.button`
 background: transparent;
-border-radius: 3px;
-border: 2px solid steelblue;
+box-shadow: 0 5px 25px steelblue;
+border: none;
+border-radius: 50%;
+cursor: pointer;
+font-size: 50px;
+position: fixed;
+bottom: 24px;
+right: 24px;
+font-weight: bold;
 color: snow;
-margin: 0 1em;
-padding: 0.25em 1em;
-text-align: center;
-width: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 64px;
+width: 64px;
+transform: rotate(0);
+transition: 0.3s ease;
 &:hover {
+  transform: rotate(224deg);
   background: snow;
   color: steelblue;
 }
