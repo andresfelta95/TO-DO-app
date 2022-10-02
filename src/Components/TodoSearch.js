@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-function TodoSearch() {
+
+// Function to search for a todo
+function TodoSearch({searchValue, setSearchValue}) {
   // Function to search a todo in the list, filter the list and show the result
   const onSearchValue = (event) => {
-    console.log("Search value", event.target.value);
+    console.log(event.target.value);  // show the value in the console
+    setSearchValue(event.target.value); // store the value in the state
   };
 
 
@@ -12,7 +15,7 @@ function TodoSearch() {
     <React.Fragment>
       <Input 
         type="text" 
-        placeholder="Add Todo"
+        placeholder="Search a Todo"
         onChange={onSearchValue}
       />
     </React.Fragment>
