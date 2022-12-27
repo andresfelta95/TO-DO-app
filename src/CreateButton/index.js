@@ -1,16 +1,18 @@
+import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 import React from "react";
 import styled from "styled-components";
 
-function CreateButton() {
+function CreateButton(props) {
   // Function to create a new todo
-  const onClickButton = (text) => {
-    console.log("Create a new todo with", text);
+  const onClickButton = () => {
+    //  Every time we click the button, we will toggle the state of the modal
+    props.setOpenModal((prevOpenModal) => !prevOpenModal);
   };
 
   return (
     <React.Fragment>
       <Button
-        onClick={() => onClickButton("New TODO")}
+        onClick={onClickButton}
       >
         ➕
       </Button>
@@ -41,7 +43,7 @@ width: 64px;
 transform: rotate(0);
 transition: 0.3s ease;
 &:hover {
-  transform: rotate(224deg);
+  transform: rotate(270deg);
   background: snow;
   color: steelblue;
 }
@@ -49,6 +51,7 @@ transition: 0.3s ease;
   background: snow;
   color: steelblue;
 }
+z-index: 1;
 `;
 
 

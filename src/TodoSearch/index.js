@@ -1,9 +1,13 @@
 import React from "react";
+import { TodoContext } from "../TodoContext";
 import styled from "styled-components";
 
 
 // Function to search for a todo
-function TodoSearch({searchValue, setSearchValue}) {
+function TodoSearch() {
+
+  const {searchValue, setSearchValue} = React.useContext(TodoContext);  // get the value from the state
+
   // Function to search a todo in the list, filter the list and show the result
   const onSearchValue = (event) => {
     console.log(event.target.value);  // show the value in the console

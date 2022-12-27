@@ -1,0 +1,67 @@
+/* Path: src/TodoForm/TodoForm.js */
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: skyblue;
+    font-family: Roboto, sans-serif;
+}
+
+label {
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: 600;
+    text-align: center;
+    color: steelblue;
+}
+
+textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  outline: none;
+}
+
+textarea:focus {
+  box-shadow: 0 0 0 2px #000;
+}
+
+.TodoForm-buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.TodoForm-button {
+  margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    transition: opacity .2s ease;
+    transform: scale(1);  
+}
+.TodoForm-button:hover {
+  opacity: .8;
+  transform: scale(1.05);
+}
+.TodoForm-button-cancel {
+  background-color: snow;
+  color: steelblue;
+}
+
+.TodoForm-button-add {
+  background-color: steelblue;
+  color: snow;
+}

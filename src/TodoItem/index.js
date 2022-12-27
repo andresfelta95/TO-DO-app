@@ -2,23 +2,23 @@ import React from "react";
 import styled from "styled-components";
 
 function TodoItem(props) {
-  // Create a function to complete the todo when the Check item is clicked
-  const onComplete = () => {
-    console.log("Completed TODO", props.text);
-  };
-  // Create a function to delete the todo when the Delete item is clicked
-  const onDelete = () => {
-    console.log("Deleted TODO", props.text);
-  };
+  // // Create a function to complete the todo when the Check item is clicked
+  // const onComplete = () => {
+  //   console.log("Completed TODO", props.text);
+  // };
+  // // Create a function to delete the todo when the Delete item is clicked
+  // const onDelete = () => {
+  //   console.log("Deleted TODO", props.text);
+  // };
 
 
   return (
     <Li>
         <Check 
-          className={`Icon-check ${props.completed && 'Icon-check--active'}`}
-          onClick={onComplete}
+          onClick={props.onComplete}  // pass the function to the onClick event to complete the todo
         >
-          ✅
+          {/* Show a checkmark if the todo is completed */}
+          {props.completed ? "✅" : "☑️"} 
         </Check>
 
         <P className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
@@ -26,7 +26,7 @@ function TodoItem(props) {
         </P>
 
         <Delete
-          onClick={onDelete}
+          onClick={props.onDelete}  // pass the function to the onClick event to delete the todo
         >
           ❌
         </Delete>
