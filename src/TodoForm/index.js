@@ -35,6 +35,7 @@ function TodoForm() {
 
   return (
     <form onSubmit={onSubmit}>
+        <img src="https://cdn-icons-png.flaticon.com/512/4345/4345573.png" alt="gif"></img>
       <label>Write a new TODO</label>
       <textarea
         value={newTodoValue}

@@ -45,14 +45,17 @@ const Li = styled.li`
   justify-content: center;
   align-items: center;
   margin-top: 24px;
+  margin-left: 100px;
+  margin-right: 100px;
   box-shadow: 0 5px 50px steelblue;
   border-radius: 10px;
   border: none;
   color: steelblue;
-  padding: 24px;
+  padding: 0 0 24px 24px;
+  transition: 0.3s ease;
+  transform: scale(1);
   &:hover {
-    background: steelblue;
-    color: snow;
+    transform: scale(1.1);
   }
 `;
 // Create a span with a checkmark inside using the class Icon-check and hidind it unless the todo is completed
@@ -97,11 +100,15 @@ const Delete = styled.span`
 const P = styled.p`
   margin: 24px 0 24px 24px;
   width: calc(100% - 120px);
-  font-size: 18px;
+  font-size: 24px;
   font-family: "Roboto", sans-serif;
   line-height: 24px;
   font-weight: 400;
   &.TodoItem-p--complete {
     text-decoration: line-through;
+  }
+  & hover {
+    color: snow;
+    background: steelblue;
   }
 `;

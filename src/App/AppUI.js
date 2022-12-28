@@ -22,7 +22,8 @@ function AppUI() {
   } = React.useContext(TodoContext);
 
   return (
-    <React.Fragment>
+    <React.Fragment>      
+      <img src="https://www.shareicon.net/data/2015/05/10/36529_todo_512x512.png" alt="gif"></img>
       <CSSReset />
       <TodoCounter />
       <br></br>
@@ -31,7 +32,11 @@ function AppUI() {
       <TodoList>
         {error && <p>Error!</p>}
         {loading && <p>Loading ...</p>}
-        {(!loading && !searchedTodos.length) && <h1>Create your first todo</h1>}
+        {(!loading && !searchedTodos.length) && 
+        <div>
+          <h1>Create your first todo</h1>
+          </div>
+        }
 
         {searchedTodos.map((todo) => (
           <TodoItem 
@@ -78,6 +83,10 @@ const CSSReset = createGlobalStyle`
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     color: steelblue;
+  }
+  img {
+    width: 200px;
+    height: 200px;
   }
 `;
 
